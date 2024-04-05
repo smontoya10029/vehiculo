@@ -3,9 +3,9 @@
 @section('content')
     <div class="bg-light p-5 rounded">
         @auth
-        <h1>Dashboard</h1>
-        <p class="lead">Only authenticated users can access this section.</p>
-        <a class="btn btn-lg btn-primary" href="https://codeanddeploy.com" role="button">View more tutorials here &raquo;</a>
+        <h1>VEHICULOS</h1>
+        <p class="lead">Sólo los usuarios autenticados pueden acceder a esta sección.</p>
+        <a class="btn btn-lg btn-primary" href="{{ route('vehiculo.show') }}" role="button">Vehiculos &raquo;</a>
         @endauth
 
         @guest

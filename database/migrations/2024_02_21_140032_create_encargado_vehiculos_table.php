@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('encargado_vehiculos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('cedula', 50);
+            $table->string('nombre', 50);
+            $table->string('apellido', 50);
+            $table->string('direccion', 50);
+            $table->biginteger('telefono');
+            $table->string('ciudad', 50);
+            $table->biginteger('tipo_propiedad');
             $table->timestamps();
-         });
+        });
     }
 
     /**
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('employes');
     }
 };

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\VehiculosController;
+use App\Http\Controllers\EmployesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,11 @@ use App\Http\Controllers\RegisterController;
 
 /* Route::get('/register', [RegisterController::class, 'show']);
 Route::post('/action-register', [RegisterController::class, 'register']); */
+
+Route::get('/', function () {
+    return view('auth/login');
+})->name('home');
+
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
@@ -45,5 +52,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Logout Routes
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+        Route::get('/vehiculo', 'VehiculosController@show')->name('vehiculo.show');
+        Route::get('/encargado', 'EmployesController@show')->name('encargado.show');
+
     });
 });
